@@ -1,0 +1,4 @@
+{
+  "html.suggest.angular1": true,
+  "html.format.wrapAttributes": "force-expand-multiline"
+}
