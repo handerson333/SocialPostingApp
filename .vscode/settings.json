@@ -1,4 +1,7 @@
 {
   "html.suggest.angular1": true,
-  "html.format.wrapAttributes": "force-expand-multiline"
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "eslint.format.enable": true
 }
