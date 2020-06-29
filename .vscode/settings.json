@@ -3,5 +3,11 @@
   "html.format.wrapAttributes": "force-expand-multiline",
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.jsxSingleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.endOfLine": "auto"
 }

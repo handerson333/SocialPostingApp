@@ -55,6 +55,7 @@ export class PostsService {
       title: string;
       content: string;
       imagePath: string;
+      author: string;
     }>('http://localhost:3000/api/posts/' + id);
   }
 
@@ -87,6 +88,7 @@ export class PostsService {
         title: title,
         content: content,
         imagePath: image,
+        author: null,
       };
     }
     this.http
