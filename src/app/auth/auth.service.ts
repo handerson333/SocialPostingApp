@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AuthData } from './auth-data.model';
-import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+
+import { AuthData } from './auth-data.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -10,11 +11,13 @@ export class AuthService {
   private token: string;
   private tokenTimer: any;
   private authStatusListener = new Subject<boolean>();
+
   constructor(private http: HttpClient, private router: Router) {}
 
   getToken() {
     return this.token;
   }
+
   getIsAuth() {
     return this.isAuthenticated;
   }
@@ -51,6 +54,7 @@ export class AuthService {
           const expirationDate = new Date(
             now.getTime() + expiresInDuration * 1000
           );
+          console.log(expirationDate);
           this.saveAuthData(token, expirationDate);
           this.router.navigate(['/']);
         }
@@ -82,6 +86,7 @@ export class AuthService {
   }
 
   private setAuthTimer(duration: number) {
+    console.log('Setting timer: ' + duration);
     this.tokenTimer = setTimeout(() => {
       this.logout();
     }, duration * 1000);
@@ -91,10 +96,12 @@ export class AuthService {
     localStorage.setItem('token', token);
     localStorage.setItem('expiration', expirationDate.toISOString());
   }
+
   private clearAuthData() {
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
   }
+
   private getAuthData() {
     const token = localStorage.getItem('token');
     const expirationDate = localStorage.getItem('expiration');

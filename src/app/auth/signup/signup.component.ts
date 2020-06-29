@@ -10,13 +10,13 @@ import { AuthService } from '../auth.service';
 export class SignupComponent {
   isLoading = false;
 
-  constructor(public authSerice: AuthService) {}
+  constructor(public authService: AuthService) {}
 
   onSignup(form: NgForm) {
     if (form.invalid) {
       return;
     }
     this.isLoading = true;
-    this.authSerice.createUser(form.value.email, form.value.password);
+    this.authService.createUser(form.value.email, form.value.password);
   }
 }
